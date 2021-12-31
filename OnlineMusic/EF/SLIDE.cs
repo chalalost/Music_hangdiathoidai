@@ -5,6 +5,7 @@ namespace OnlineMusic.EF
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+    using System.Web;
 
     [Table("SLIDE")]
     public partial class SLIDE
@@ -23,5 +24,6 @@ namespace OnlineMusic.EF
         public string Description { get; set; }
 
         public bool? Status { get; set; }
+
     }
 }

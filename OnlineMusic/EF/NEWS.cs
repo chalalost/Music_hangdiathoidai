@@ -13,9 +13,6 @@ namespace OnlineMusic.EF
         [StringLength(300)]
         public string Name { get; set; }
 
-        [StringLength(10)]
-        public string Code { get; set; }
-
         [StringLength(200)]
         public string MetaTitle { get; set; }
 
@@ -25,14 +22,9 @@ namespace OnlineMusic.EF
         [StringLength(800)]
         public string Description { get; set; }
 
-        [Column(TypeName = "xml")]
-        public string MoreImage { get; set; }
-
         [Column(TypeName = "ntext")]
         public string Details { get; set; }
 
         public bool? Status { get; set; }
-
-        public DateTime? CreateDate { get; set; }
     }
 }

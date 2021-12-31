@@ -1,0 +1,41 @@
+﻿@model IEnumerable<OnlineMusic.EF.FEEDBACK>
+
+@{
+    ViewBag.Title = "Danhsach";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card-body">
+    <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>CreateDate</th>
+                    <th>Email</th>
+                    <th>Content</th>
+                    <th></th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.ID</td>
+                        <td>@item.CreateDate</td>
+                        <td>@item.Email</td>
+                        <td>@item.FeedBackContent</td>
+                        <td>
+                            <a href="/Admin/FeedBack/Chitiet?date=@item.CreateDate">Chi Tiết</a>
+                            <a>|</a>
+                            <a href="/Admin/FeedBack/Xoa?meta=@item.ID"> Xóa</a>
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+        @*@Html.PagedListPager(Model, Page => Url.Action("Danhsach", new { Page }));*@
+    </div>
+</div>

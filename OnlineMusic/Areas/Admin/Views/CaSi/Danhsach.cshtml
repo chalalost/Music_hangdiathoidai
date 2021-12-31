@@ -1,0 +1,51 @@
+﻿@model IEnumerable<OnlineMusic.EF.CASI>
+
+@{ ViewBag.Title = "Danhsach";
+                Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml"; }
+
+<div>
+    <button class="btn btn-light" type="button">
+        @Html.ActionLink("Thêm mới ca sĩ", "Index")
+    </button>
+
+</div>
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Tên ca sĩ</th>
+                        <th>MetaTitle</th>
+                        <th>Mô tả</th>
+                        <th>Image</th>
+                        <th>CategoryID</th>
+                        <th></th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+        <tr>
+            <td>@item.SingerID</td>
+            <td>@item.Name</td>
+            <td>@item.MetaTitle</td>
+            <td>@item.Desciption</td>
+            <td>@item.Image</td>
+            <td>@item.CategoryID</td>
+            <td>
+                <a href="/Admin/CaSi/Sua?meta=@item.MetaTitle">Sửa</a>
+                <a href="/Admin/CaSi/Xoa?meta=@item.MetaTitle"> Xóa</a>
+            </td>
+        </tr>}
+
+                </tbody>
+            </table>
+            @*@Html.PagedListPager(Model, Page => Url.Action("Danhsach", new { Page }));*@
+        </div>
+    </div>
+</div>

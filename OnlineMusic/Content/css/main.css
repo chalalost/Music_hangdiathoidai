@@ -224,28 +224,27 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 /*==================================================================
 [ Top bar ]*/
 .top-bar {
-  height: 40px;
-  background-color: #222;
+    height: 40px;
+    background-color: #D2B39F;
 }
 
 /*---------------------------------------------*/
 .left-top-bar {
-  font-family: Poppins-Regular;
-  font-size: 12px;
-  line-height: 1.8;
-  color: #b2b2b2;
+    font-family: Poppins-Regular;
+    font-size: 12px;
+    line-height: 1.8;
+    color: #111;
 }
 
 
 /*---------------------------------------------*/
 .right-top-bar a {
-  font-family: Poppins-Regular;
-  font-size: 12px;
-  line-height: 1.8;
-
-  height: 100%;
-  color: #b2b2b2;
-  border-right: 1px solid rgba(255,255,255,0.3);
+    font-family: Poppins-Medium;
+    font-size: 12px;
+    line-height: 1.8;
+    height: 100%;
+    color: #111;
+    border-right: 1px solid rgba(255,255,255,0.3);
 }
 
 .right-top-bar a:first-child {
@@ -253,7 +252,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 }
 
 .right-top-bar a:hover {
-  color: #6c7ae0;
+  color: #f2d9c3;
 }
 
 
@@ -422,25 +421,23 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 }
 
 .sub-menu a {
-  font-family: Poppins-Regular;
-  font-size: 14px;
-  line-height: 1.5;
-  color: #555;
-
-  display: block;
-  padding: 8px 20px; 
-  width: 100%;
-
-  transition: all 0.4s;
-  -webkit-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  -moz-transition: all 0.4s;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #555;
+    display: block;
+    padding: 8px 20px;
+    width: 100%;
+    transition: all 0.4s;
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
 }
 
 /*---------------------------------------------*/
 .main-menu > li:hover > a {
   text-decoration: none;
-  color: #6c7ae0;
+  color: #f2d9c3;
 }
 
 .main-menu > li:hover > .sub-menu {
@@ -458,7 +455,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 }
 
 .sub-menu > li:hover > a {
-  color: #6c7ae0;
+  color: #f2d9c3;
   text-decoration: none;
 }
 
@@ -579,7 +576,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 }
 
 .wrap-search-header button:hover {
-  color: #6c7ae0;
+  color: #f2d9c3;
 }
 
 /*---------------------------------------------*/
@@ -638,7 +635,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 
 /*---------------------------------------------*/
 .main-menu > li.active-menu > a {
-  color: #6c7ae0;
+  color: #f2d9c3;
 }
 
 
@@ -1123,7 +1120,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 }
 
 .rs1-select2 .select2-container--default .select2-selection--single .select2-selection__arrow:hover:after {
-  color: #6c7ae0;
+  color: #f2d9c3;
 }
 
 
@@ -1155,12 +1152,12 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 }
 
 .rs1-select2 .select2-container .select2-results__option[aria-selected="true"] {
-  background: #6c7ae0;
+  background: #f2d9c3;
   color: white;
 }
 
 .rs1-select2 .select2-container .select2-results__option--highlighted[aria-selected] {
-  background: #6c7ae0;
+  background: #f2d9c3;
   color: white;
 }
 
@@ -1752,13 +1749,13 @@ button.mfp-close {
 }
 
 .filter-link:hover {
-  color: #6c7ae0;
-  border-bottom: 1px solid #6c7ae0;
+  color: #f2d9c3;
+  border-bottom: 1px solid #f2d9c3;
 }
 
 .filter-link-active {
-  color: #6c7ae0;
-  border-bottom: 1px solid #6c7ae0;
+  color: #f2d9c3;
+  border-bottom: 1px solid #f2d9c3;
 }
 
 @media (max-width: 767px) {
@@ -1936,7 +1933,6 @@ input.num-product::-webkit-inner-spin-button {
 
 .table-shopping-cart .column-4 {
   width: 145px;
-  text-align: right;
 }
 
 .table-shopping-cart .column-5 {
@@ -1968,11 +1964,11 @@ input.num-product::-webkit-inner-spin-button {
   padding-bottom: 15px;
 }
 
-.table-shopping-cart td {
-  font-family: Poppins-Regular;
-  color: #555;
-  line-height: 1.6;
-}
+    .table-shopping-cart td {
+        font-family: kelsonBold, serif;
+        color: #555;
+        line-height: 1.6;
+    }
 
 
 
@@ -2126,7 +2122,7 @@ input.num-product::-webkit-inner-spin-button {
 .cl3 {color: #666;}
 .cl4 {color: #999;}
 .cl5 {color: #222;}
-.cl6 {color: #888;}
+.cl6 {color: #111;}
 .cl7 {color: #b2b2b2;}
 .cl8 {color: #555;}
 .cl9 {color: #aaa;}
@@ -2144,28 +2140,28 @@ input.num-product::-webkit-inner-spin-button {
 }
 
 .stext-102 {
-  font-family: Poppins-Regular;
-  font-size: 14px;
-  line-height: 1.7;
+    font-family: kelsonBold, serif;
+    font-size: 14px;
+    line-height: 18px;
 }
 
 .stext-103 {
-  font-family: Poppins-Regular;
-  font-size: 15px;
-  line-height: 1.466667;
+    font-family: Poppins-Regular;
+    font-size: 15px;
+    line-height: 18px;
 }
 
 .stext-104 {
-  font-family: Poppins-Regular;
-  font-size: 14px;
-  line-height: 1.466667;
+    font-family: kelsonBold, serif;
+    font-size: 14px;
+    line-height: 18px;
 }
 
 .stext-105 {
-  font-family: Poppins-Regular;
-  font-size: 14px;
-  line-height: 1.466667;
-  letter-spacing: 1px;
+    font-family: kelsonBold, serif;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 1px;
 }
 
 .stext-106 {
@@ -2187,9 +2183,9 @@ input.num-product::-webkit-inner-spin-button {
 }
 
 .stext-109 {
-  font-family: Poppins-Regular;
-  font-size: 12px;
-  line-height: 1.833333;
+    font-family: kelsonBold, serif;
+    font-size: 12px;
+    line-height: 18px;
 }
 
 .stext-110 {
@@ -2199,9 +2195,9 @@ input.num-product::-webkit-inner-spin-button {
 }
 
 .stext-111 {
-  font-family: Poppins-Regular;
-  font-size: 13px;
-  line-height: 1.6923;
+    font-family: kelsonBold, serif;
+    font-size: 14px;
+    line-height: 1.6923;
 }
 
 .stext-112 {
@@ -2279,9 +2275,9 @@ input.num-product::-webkit-inner-spin-button {
 }
 
 .mtext-105 {
-  font-family: Poppins-Regular;
-  font-size: 24px;
-  line-height: 1.5;
+    font-family: kelsonBold, serif;
+    font-size: 24px;
+    line-height: 1.5;
 }
 
 .mtext-106 {
@@ -2641,9 +2637,13 @@ input.num-product::-webkit-inner-spin-button {
 .bg0 {background-color: #fff;}
 .bg1 {background-color: #f2d9c3;}
 .bg2 {background-color: #e6e6e6;}
-.bg3 {background-color: #222;}
+.bg3 {
+    background-color: #D2B39F;
+}
 .bg5 {background-color: rgba(0,0,0,0.5);}
-.bg6 {background-color: #f2f2f2;}
+.bg6 {
+    background-color: #D2B39F;
+}
 .bg7 {background-color: #333;}
 .bg8 {background-color: #f3f3f3;}
 .bg9 {background-color: rgba(255,255,255,0.9);}
@@ -2797,7 +2797,7 @@ input.num-product::-webkit-inner-spin-button {
 
 /*---------------------------------------------*/
 .js-addedwish-detail {
-  color: #6c7ae0;
+  color: #f2d9c3;
 }
 
 /*---------------------------------------------*/

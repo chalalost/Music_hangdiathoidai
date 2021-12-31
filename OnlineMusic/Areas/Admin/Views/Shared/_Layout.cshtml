@@ -1,4 +1,4 @@
-﻿   
+﻿
 @{ Layout = null; }
 
 <!DOCTYPE html>
@@ -66,6 +66,20 @@
                 </div>
             </li>
 
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseE"
+                   aria-expanded="true" aria-controls="collapseE">
+                    <span>Danh mục sản phẩm</span>
+                </a>
+                <div id="collapseE" class="collapse" aria-labelledby="headingUtilities"
+                     data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        @Html.ActionLink("Thêm danh mục", "Index", "ProductCategory", null, new { @class = "collapse-item" })
+                        @Html.ActionLink("Danh sách các danh mục", "Danhsach", "ProductCategory", null, new { @class = "collapse-item" })
+                    </div>
+                </div>
+            </li>
+
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
@@ -75,10 +89,8 @@
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
                      data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        @Html.ActionLink("Color", "utilities_color", "Home", null, new { @class = "collapse-item" })
-                        @Html.ActionLink("Border", "utilities_border", "Home", null, new { @class = "collapse-item" })
-                        @Html.ActionLink("Animation", "utilities_animation", "Home", null, new { @class = "collapse-item" })
-                        @Html.ActionLink("Other", "utilities_other", "Home", null, new { @class = "collapse-item" })
+                        @Html.ActionLink("Thêm sản phẩm", "Index", "Product", null, new { @class = "collapse-item" })
+                        @Html.ActionLink("Danh sách các sản phẩm", "Danhsach", "Product", null, new { @class = "collapse-item" })
                     </div>
                 </div>
             </li>
@@ -92,10 +104,8 @@
                 <div id="collapseA" class="collapse" aria-labelledby="headingUtilities"
                      data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        @Html.ActionLink("Color", "utilities_color", "Home", null, new { @class = "collapse-item" })
-                        @Html.ActionLink("Border", "utilities_border", "Home", null, new { @class = "collapse-item" })
-                        @Html.ActionLink("Animation", "utilities_animation", "Home", null, new { @class = "collapse-item" })
-                        @Html.ActionLink("Other", "utilities_other", "Home", null, new { @class = "collapse-item" })
+                        @Html.ActionLink("Thêm ca sĩ", "Index", "CaSi", null, new { @class = "collapse-item" })
+                        @Html.ActionLink("Danh sách ca sĩ", "Danhsach", "CaSi", null, new { @class = "collapse-item" })
                     </div>
                 </div>
             </li>
@@ -125,15 +135,13 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseB"
                    aria-expanded="true" aria-controls="collapseB">
-                    <span>Tin tức</span>
+                    <span>Blogs</span>
                 </a>
                 <div id="collapseB" class="collapse" aria-labelledby="headingUtilities"
                      data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        @Html.ActionLink("Color", "utilities_color", "Home", null, new { @class = "collapse-item" })
-                        @Html.ActionLink("Border", "utilities_border", "Home", null, new { @class = "collapse-item" })
-                        @Html.ActionLink("Animation", "utilities_animation", "Home", null, new { @class = "collapse-item" })
-                        @Html.ActionLink("Other", "utilities_other", "Home", null, new { @class = "collapse-item" })
+                        @Html.ActionLink("Thêm blog", "Index", "Blog", null, new { @class = "collapse-item" })
+                        @Html.ActionLink("Danh sách blog", "Danhsach", "Blog", null, new { @class = "collapse-item" })
                     </div>
                 </div>
             </li>
@@ -146,10 +154,8 @@
                 <div id="collapseC" class="collapse" aria-labelledby="headingUtilities"
                      data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        @Html.ActionLink("Color", "utilities_color", "Home", null, new { @class = "collapse-item" })
-                        @Html.ActionLink("Border", "utilities_border", "Home", null, new { @class = "collapse-item" })
-                        @Html.ActionLink("Animation", "utilities_animation", "Home", null, new { @class = "collapse-item" })
-                        @Html.ActionLink("Other", "utilities_other", "Home", null, new { @class = "collapse-item" })
+                        @Html.ActionLink("Thêm slide", "Index", "Slide", null, new { @class = "collapse-item" })
+                        @Html.ActionLink("Danh sách slide", "Danhsach", "Slide", null, new { @class = "collapse-item" })
                     </div>
                 </div>
             </li>
@@ -162,10 +168,7 @@
                 <div id="collapseD" class="collapse" aria-labelledby="headingUtilities"
                      data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        @Html.ActionLink("Color", "utilities_color", "Home", null, new { @class = "collapse-item" })
-                        @Html.ActionLink("Border", "utilities_border", "Home", null, new { @class = "collapse-item" })
-                        @Html.ActionLink("Animation", "utilities_animation", "Home", null, new { @class = "collapse-item" })
-                        @Html.ActionLink("Other", "utilities_other", "Home", null, new { @class = "collapse-item" })
+                        @Html.ActionLink("Danh sách phản hồi", "Danhsach", "FeedBack", null, new { @class = "collapse-item" })
                     </div>
                 </div>
             </li>
@@ -178,16 +181,16 @@
                 </li>*@
 
             <!-- Nav Item - Charts -->
-            <li class="nav-item">
+            @*<li class="nav-item">
 
                 @Html.ActionLink("Charts", "Chart", "Home", null, new { @class = "nav-link" })
 
-            </li>
+            </li>*@
 
             <!-- Nav Item - Tables -->
-            <li class="nav-item">
+            @*<li class="nav-item">
                 @Html.ActionLink("Tables", "Table", "Home", null, new { @class = "nav-link" })
-            </li>
+            </li>*@
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
@@ -383,70 +386,78 @@
 
                         <div class="topbar-divider d-none d-sm-block"></div>
 
-                        <!--@{
-                            //var session = (OnlineMusic.Common.UserLogin)Session[OnlineMusic.Common.CommonConstants.USER_SESSION];
+                        @{
+                            var session = (OnlineMusic.Common.UserLogin)Session[OnlineMusic.Common.CommonConstants.USER_SESSION];
                         }
+                        @if (session != null)
+                        {
 
-                        <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Chào ! ??</span>
-                                <img class="img-profile rounded-circle"
-                                     src="~/Content/admin/img/undraw_profile.svg">
-                            </a>-->
-                            <!-- Dropdown - User Information -->
-                            <!--<div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Profile
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Settings
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Activity Log
-                                </a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Logout
-                                </a>
-                            </div>
-                        </li>-->
-                        <!-- Nav Item - User Information -->
-                        <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Chào ! </span>
-                                <img class="img-profile rounded-circle"
-                                     src="~/Content/admin/img/undraw_profile.svg">
-                            </a>
-                            <!-- Dropdown - User Information -->
-                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Profile
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Settings
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Activity Log
-                                </a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Logout
-                                </a>
-                            </div>
-                        </li>
 
+                            <li class="nav-item dropdown no-arrow">
+                                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">Chào @session.UserName</span>
+                                    <img class="img-profile rounded-circle"
+                                         src="~/Content/admin/img/undraw_profile.svg">
+                                </a>
+                                <!-- Dropdown - User Information -->
+                                <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                     aria-labelledby="userDropdown">
+                                    <a class="dropdown-item" href="#">
+                                        <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                        Profile
+                                    </a>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                                        Settings
+                                    </a>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                                        Activity Log
+                                    </a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                        <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                        Logout
+                                    </a>
+                                </div>
+                            </li>
+                        }
+                        else
+                        {
+
+
+                            <!-- Nav Item - User Information -->
+                            <li class="nav-item dropdown no-arrow">
+                                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">Chào ! </span>
+                                    <img class="img-profile rounded-circle"
+                                         src="~/Content/admin/img/undraw_profile.svg">
+                                </a>
+                                <!-- Dropdown - User Information -->
+                                <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                     aria-labelledby="userDropdown">
+                                    <a class="dropdown-item" href="#">
+                                        <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                        Profile
+                                    </a>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                                        Settings
+                                    </a>
+                                    <a class="dropdown-item" href="#">
+                                        <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                                        Activity Log
+                                    </a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                        <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                        Logout
+                                    </a>
+                                </div>
+                            </li>
+                        }
                     </ul>
 
                 </nav>
@@ -504,7 +515,7 @@
 
     <!-- Core plugin JavaScript-->
     <script src="~/Content/admin/vendor/jquery-easing/jquery.easing.min.js"></script>
-
+    <script src="~/Content/libs/ckfinder.js"></script>
     <!-- Custom scripts for all pages-->
     <script src="~/Content/admin/js/sb-admin-2.min.js"></script>
 
@@ -514,7 +525,7 @@
     <!-- Page level custom scripts -->
     <script src="~/Content/admin/js/demo/chart-area-demo.js"></script>
     <script src="~/Content/admin/js/demo/chart-pie-demo.js"></script>
-
+    @RenderSection("jsFooter", required: false)
 </body>
 
 </html>

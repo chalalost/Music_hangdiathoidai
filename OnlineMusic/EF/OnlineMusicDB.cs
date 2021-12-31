@@ -20,6 +20,10 @@ namespace OnlineMusic.EF
         public virtual DbSet<SLIDE> SLIDEs { get; set; }
     
         public virtual DbSet<USER> USERs { get; set; }
+        public virtual DbSet<CUSTOMER> CUSTOMERs { get; set; }
+        public virtual DbSet<ORDER> ORDERs { get; set; }
+        public virtual DbSet<ORDERDETAIL> ORDERDETAILs { get; set; }
+        public virtual DbSet<FEEDBACK> FEEDBACKs { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -41,10 +45,6 @@ namespace OnlineMusic.EF
 
             modelBuilder.Entity<DANHMUCSANPHAM>()
                 .Property(e => e.MetaTitle)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<NEWS>()
-                .Property(e => e.Code)
                 .IsUnicode(false);
 
             modelBuilder.Entity<NEWS>()
@@ -74,6 +74,39 @@ namespace OnlineMusic.EF
             modelBuilder.Entity<USER>()
                 .Property(e => e.Password)
                 .IsUnicode(false);
+
+            modelBuilder.Entity<CUSTOMER>()
+                .Property(e => e.UserName)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<CUSTOMER>()
+                .Property(e => e.Password)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<ORDERDETAIL>()
+                .Property(e => e.Price)
+                .HasPrecision(18, 0);
+
+            modelBuilder.Entity<SANPHAM>()
+                .Property(e => e.Code)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<SANPHAM>()
+                .Property(e => e.MetaTitle)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<SANPHAM>()
+                .Property(e => e.Price)
+                .HasPrecision(18, 0);
+
+            modelBuilder.Entity<SANPHAM>()
+                .Property(e => e.PromotionPrice)
+                .HasPrecision(18, 0);
+
         }
+
+        public System.Data.Entity.DbSet<OnlineMusic.Models.RegisterModel> RegisterModels { get; set; }
+
+        public System.Data.Entity.DbSet<OnlineMusic.Models.LoginModel> LoginModels { get; set; }
     }
 }

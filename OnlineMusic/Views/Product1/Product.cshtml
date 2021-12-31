@@ -1,0 +1,108 @@
+﻿
+@{
+    ViewBag.Title = "Product";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var sp = (List<OnlineMusic.EF.SANPHAM>)ViewBag.SANPHAM;
+}
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<!-- Cart -->
+<!-- Product -->
+<div class="bg0 m-t-23 p-b-140">
+    <div class="container">
+        <div class="flex-w flex-sb-m p-b-52">
+            @{ Html.RenderAction("ProductCategory", "Product1");}
+            <!-- Search product -->
+
+
+
+        </div>
+
+        <div class="row isotope-grid" , id="SearchData">
+
+            @* @{ Html.RenderAction("Product", "Product1");}*@
+            @foreach (var item in sp)
+            {
+                var url = "/chitiet/" + item.MetaTitle + "-" + item.ID;
+                <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item @item.CategoryID">
+                    <!-- Block2 -->
+                    <div class="block2">
+                        <div class="block2-pic hov-img0">
+                            <img src="@item.Image" alt="IMG-PRODUCT">
+                        </div>
+
+                        <div class="block2-txt flex-w flex-t p-t-14">
+                            <div class="block2-txt-child1 flex-col-l ">
+                                <a href="@url" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+                                    @item.Name
+                                </a>
+                                @if (item.PromotionPrice != null)
+                                {
+
+                                    <del style="color: #999" class="stext-105">
+                                        @item.PromotionPrice.GetValueOrDefault(0).ToString("N0") VNĐ
+                                    </del>
+                                    <span class="stext-105 cl3">
+                                        @(item.Price.HasValue?item.Price.Value.ToString("N0")+"VNĐ" : "Liên Hệ")
+                                    </span>
+                                }
+                                else
+                                {
+                                    <span class="stext-105 cl3">
+                                        @(item.Price.HasValue?item.Price.Value.ToString("N0")+"VNĐ" : "Liên Hệ")
+                                    </span>
+                                }
+                            </div>
+
+                            <div class="block2-txt-child2 flex-r p-t-3">
+                                <a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
+                                    <img class="icon-heart1 dis-block trans-04" src="~/Content/images/icons/icon-heart-01.png" alt="ICON">
+                                    <img class="icon-heart2 dis-block trans-04 ab-t-l" src="~/Content/images/icons/icon-heart-02.png" alt="ICON">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+
+        <!-- Load more -->
+        <div class="flex-c-m flex-w w-full p-t-45">
+            <a href="#" class="flex-c-m stext-101 cl5 size-103 bg2 bor1 hov-btn1 p-lr-15 trans-04">
+                Load More
+            </a>
+        </div>
+    </div>
+</div>@**@
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#txtKeyword').click(function () {
+                var ketqua = $('#Search').val();
+                var SetData = $('#SearchData');
+                SetData.html("");
+                $.ajax({
+                    type: "post",
+                    url: "/tim-kiem?ket-qua" + ketqua,
+                    contentType: "html",
+
+                    success: function (result) {
+                        if (result.length == 0) {
+                            SetData.append('<div class="stext - 105 cl3">Không có kết quả phù hợp</div>')
+                        }
+                        else {
+                            function contentStringHtml(name) {
+                                var list;
+                                $.each(result, function (index, value) {
+                                    list += '<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item"' + value.CategoryID + '">';
+                                });
+                                return '<div>Thanh cong</div>';
+                            }
+                        }
+                    }
+                });
+            });
+        });
+    </script>

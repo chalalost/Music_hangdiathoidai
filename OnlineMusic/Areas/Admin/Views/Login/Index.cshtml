@@ -53,13 +53,13 @@
                                         <form class="user">
                                             <div class="form-group">
                                                 @*<input type="email" class="form-control form-control-user"
-                    id="exampleInputEmail" aria-describedby="emailHelp"
-                    placeholder="Enter Email Address...">*@
+                                                    id="exampleInputEmail" aria-describedby="emailHelp"
+                                                    placeholder="Enter Email Address...">*@
                                                 @Html.TextBoxFor(model => model.UserName, new { @class = "form-control form-control-user", @autofocus = "autofocus" })
                                             </div>
                                             <div class="form-group">
                                                 @*<input type="password" class="form-control form-control-user"
-                    id="exampleInputPassword" placeholder="Password">*@
+                                                    id="exampleInputPassword" placeholder="Password">*@
                                                 @Html.PasswordFor(model => model.PassWord, new { @class = "form-control form-control-user" })
                                             </div>
                                             <div class="form-group">
@@ -73,8 +73,8 @@
                                             </div>
                                             <p>
                                                 <label id="botton"></label>
-                                                <input type="submit" name="action" id="submit" value="Login" class = "btn btn-primary btn-user btn-block" />
-                                               @* @Html.ActionLink("Login", "Index", "Home", null, new { @class = "btn btn-primary btn-user btn-block" })*@
+                                                <input type="submit" name="action" id="submit" value="Login" class="btn btn-primary btn-user btn-block" />
+                                                @* @Html.ActionLink("Login", "Index", "Home", null, new { @class = "btn btn-primary btn-user btn-block" })*@
                                             </p>
 
                                             <hr>

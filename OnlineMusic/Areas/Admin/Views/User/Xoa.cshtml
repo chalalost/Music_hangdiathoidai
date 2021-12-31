@@ -1,9 +1,7 @@
 ﻿@model OnlineMusic.EF.USER
 
-@{
-    ViewBag.Title = "Xoa";
-    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
-}
+@{ ViewBag.Title = "Xoa";
+                Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml"; }
 
 <h3>Are you sure you want to delete this?</h3>
 <div>
@@ -67,12 +65,12 @@
 
     </dl>
 
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
+    @using (Html.BeginForm())
+    {
+@Html.AntiForgeryToken()
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-success btn-icon-split" /> |
-            @Html.ActionLink("Back to List", "Danhsach")
-        </div>
-    }
+                <div class="form-actions no-color">
+                    <input type="submit" value="Delete" class="btn btn-success btn-icon-split" /> |
+                    @Html.ActionLink("Back to List", "Danhsach")
+                </div>}
 </div>

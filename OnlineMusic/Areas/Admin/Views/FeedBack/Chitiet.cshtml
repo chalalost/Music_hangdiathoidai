@@ -1,0 +1,40 @@
+﻿@model OnlineMusic.EF.FEEDBACK
+
+@{
+    ViewBag.Title = "Chitiet";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <h4>FEEDBACK</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CreateDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreateDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FeedBackContent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FeedBackContent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Danhsach")
+</p>

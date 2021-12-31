@@ -1,0 +1,132 @@
+﻿@model List<OnlineMusic.Models.CartItems>
+@{
+    ViewBag.Title = "Cart";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section jsFooter{
+    <script src="~/Scripts/controllers/cartController.js"></script>
+}
+
+@if (Model.Count > 0)
+{
+    <div style="color:white">a </div>
+    <div style="color:white">a </div>
+    <div style="color:white">a </div>
+    <div style="color:white">a </div>
+
+    <!-- breadcrumb -->
+    <div class="container">
+        <div class="bread-crumb flex-w p-l-25 p-r-15 p-t-30 p-lr-0-lg">
+            <a href="/" class="stext-109 cl8 hov-cl1 trans-04">
+                Home
+                <i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
+            </a>
+            <a href="/product" class="stext-109 cl8 hov-cl1 trans-04">
+                Shop
+                <i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
+            </a>
+
+            <span class="stext-109 cl4">
+                Shoping Cart
+            </span>
+        </div>
+    </div>
+
+
+    <!-- Shoping Cart -->
+    <form class="bg0 p-tb-85 p-b-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-xl-7 m-lr-auto m-b-50">
+                    <div class="m-l-25 m-r--38 m-lr-0-xl">
+                        <div class="wrap-table-shopping-cart">
+                            <table class="table-shopping-cart">
+                                <tr class="table_head">
+                                    <th class="column-1">Product</th>
+                                    <th class="column-2"></th>
+                                    <th class="column-3">Price</th>
+                                    <th class="column-4">Quantity</th>
+                                    <th class="column-5">Total</th>
+                                </tr>
+                                @foreach (var item in Model)
+                                {
+
+                                    <tr class="table_row">
+                                        <td class="column-1">
+                                            <div class="how-itemcart1">
+                                                <img src="@item.Product.Image" alt="IMG">
+                                            </div>
+                                        </td>
+                                        <td class="column-2">
+                                            @item.Product.Name
+                                            <div>
+                                                <a class="btn-delete" data-id="@item.Product.ID" href="#" style="color: #D2B39F">Xóa</a>
+                                            </div>  
+                                        </td>
+
+                                        <td class="column-3">@item.Product.Price.GetValueOrDefault(0).ToString() VNĐ</td>
+                                        <td class="column-4">
+                                            <div class="wrap-num-product flex-w m-l-auto m-r-0">
+
+                                            <input class="txtQuantity" data-id="@item.Product.ID" type="number" value="@item.Quantity" />
+                                             
+                                            </div>
+                                        </td>
+                                        <td class="column-5">@((item.Product.Price.GetValueOrDefault(0) * item.Quantity).ToString()) VNĐ</td>
+                                        @*<td class="column-5">@Model.Sum(m => (m.Product.Price.GetValueOrDefault(0) * m.Quantity)).ToString("N0") VNĐ VNĐ</td>*@
+                                    </tr>
+                                }
+                            </table>
+                        </div>
+
+                        <div class="flex-w flex-sb-m bor15 p-t-18 p-b-15 p-lr-40 p-lr-15-sm">
+                            <button id="btnContinue" ,class="flex-c-m stext-101 cl2 size-118 bg8 bor13 hov-btn3 p-lr-15 trans-04 pointer m-tb-5">
+                                Back to shop
+                            </button>
+                            <button id="btnDeleteAll" ,class="flex-c-m stext-101 cl2 size-118 bg8 bor13 hov-btn3 p-lr-15 trans-04 pointer m-tb-5">
+                                Xóa giỏ hàng
+                            </button>
+                            <button id="btnUpdate" ,class="flex-c-m stext-101 cl2 size-118 bg8 bor13 hov-btn3 p-lr-15 trans-04 pointer m-tb-5">
+                                Update Cart
+                            </button>
+                            <button id="btnPayment" ,class="flex-c-m stext-101 cl2 size-118 bg8 bor13 hov-btn3 p-lr-15 trans-04 pointer m-tb-5">
+                                Payment
+                            </button>
+                            <button id="btnPaypal" ,class="flex-c-m stext-101 cl2 size-118 bg8 bor13 hov-btn3 p-lr-15 trans-04 pointer m-tb-5">
+                                Payment With PayPal
+                            </button>
+                            @{ Html.ActionLink("Payment With PayPal", "PaymentWithPayPal", "Cart", null , new { @class = "stext-109 cl8 hov-cl1 trans-04" });}
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </form>
+
+
+
+}
+else
+{
+    <div style="color:white">a </div>
+    <div style="color:white">a </div>
+    <div style="color:white">a </div>
+    <div style="color:white">a </div>
+    <div style="color:white">a </div>
+    <div style="color:white">a </div>
+    <div style="color:white">a </div>
+    <div style="color:white">a </div>
+    <div style="color:white">a </div>
+    <div style="color:white">a </div>
+    <div style="color:white">a </div>
+    <div style="color:white">a </div>
+
+    <center><h2 class="column-2">Giỏ hàng trống </h2></center>
+    <center><div class="column-2">Tiếp tục mua hàng <a class="column-2" href="/product">tại đây</a></div></center>
+    <div style="color:white">a </div>
+    <div style="color:white">a </div>
+    <div style="color:white">a </div>
+
+}
+

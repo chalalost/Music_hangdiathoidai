@@ -1,9 +1,7 @@
 ﻿@model PagedList.IPagedList<OnlineMusic.EF.USER>
 @using PagedList.Mvc;
-@{
-    ViewBag.Title = "Danhsach";
-    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
-}
+@{ ViewBag.Title = "Danhsach";
+                Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml"; }
 <div>
     <button class="btn btn-light" type="button">
         @Html.ActionLink("Thêm người dùng", "Index")
@@ -12,7 +10,6 @@
 </div>
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Danh Sách người dùng</h6>
     </div>
     <div class="card-body">
         <div class="table-responsive">
@@ -33,21 +30,20 @@
                 <tbody>
                     @foreach (var item in Model)
                     {
-                        <tr>
-                            <td>@item.ID</td>
-                            <td>@item.UserName</td>
-                            <td>@item.Name</td>
-                            <td>@item.Address</td>
-                            <td>@item.Email</td>
-                            <td>@item.Phone</td>
-                            <td>@item.Status</td>
-                            <td>
-                                <a href="/Admin/User/Sua?userName=@item.UserName">Sửa</a>
-                                |
-                                <a href="/Admin/User/Xoa?userName=@item.UserName"> Xóa</a>
-                            </td>
-                        </tr>
-                    }
+        <tr>
+            <td>@item.ID</td>
+            <td>@item.UserName</td>
+            <td>@item.Name</td>
+            <td>@item.Address</td>
+            <td>@item.Email</td>
+            <td>@item.Phone</td>
+            <td>@item.Status</td>
+            <td>
+                <a href="/Admin/User/Sua?userName=@item.UserName">Sửa</a>
+                |
+                <a href="/Admin/User/Xoa?userName=@item.UserName"> Xóa</a>
+            </td>
+        </tr>}
 
                 </tbody>
             </table>

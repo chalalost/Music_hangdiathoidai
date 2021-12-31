@@ -23,6 +23,6 @@ namespace OnlineMusic.EF
 
         public bool? Status { get; set; }
 
-        public int? ShowOnHome { get; set; }
+        public bool? ShowOnHome { get; set; }
     }
 }

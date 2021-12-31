@@ -6,7 +6,6 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using OnlineMusic.EF;
 using System.Data.Entity;
 
 namespace OnlineMusic.Areas.Admin.Controllers

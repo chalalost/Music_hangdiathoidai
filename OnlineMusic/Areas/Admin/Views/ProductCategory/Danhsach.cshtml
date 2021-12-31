@@ -1,0 +1,57 @@
+﻿@model IEnumerable<OnlineMusic.EF.DANHMUCSANPHAM>
+
+@{
+    ViewBag.Title = "Danhsach";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <button class="btn btn-light" type="button">
+        @Html.ActionLink("Thêm danh mục sản phẩm", "Index")
+    </button>
+
+</div>
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Tên danh mục</th>
+                        <th>MetaTitle</th>
+                        <th>ParentID</th>
+                        <th>DisplayOrder</th>
+                        <th>Status</th>
+                        <th>Show on home</th>
+                        <th></th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.ID</td>
+                            <td>@item.Name</td>
+                            <td>@item.MetaTitle</td>
+                            <td>@item.ParentID</td>
+                            <td>@item.DisplayOrder</td>
+                            <td>@item.Status</td>
+                            <td>@item.ShowOnHome</td>
+                            <td>
+                                <a href="/Admin/ProductCategory/Sua?meta=@item.MetaTitle">Sửa</a>
+                                |
+                                <a href="/Admin/ProductCategory/Xoa?meta=@item.MetaTitle"> Xóa</a>
+                            </td>
+                        </tr>
+}
+
+                </tbody>
+            </table>
+            @*@Html.PagedListPager(Model, Page => Url.Action("Danhsach", new { Page }));*@
+        </div>
+    </div>
+</div>
